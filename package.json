@@ -3,10 +3,35 @@
   "version": "1.0.0",
   "private": true,
   "type": "module",
+  "main": "electron/main.cjs",
+  "productName": "PetPalsAdmin",
+  "build": {
+    "appId": "com.adminapp.app",
+    "mac": {
+      "target": "dmg",
+      "category": "public.app-category.utilities"
+    },
+    "win": {
+      "target": "portable",
+      "artifactName": "${productName}.${ext}"
+    },
+    "files": [
+      "dist/**/*",
+      "electron/**/*"
+    ],
+    "directories": {
+      "buildResources": "build",
+      "output": "dist-electron"
+    }
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "electron:start": "npm run build && electron .",
+    "electron:build:mac": "npm run build && electron-builder --mac",
+    "electron:build:win": "npm run build && electron-builder --win && node copy-exe.cjs",
+    "clean": "node -e \"const fs=require('fs');['dist','dist-electron','dist-electron-build','node_modules'].forEach((d)=>{if(fs.existsSync(d))fs.rmSync(d,{recursive:true,force:true});});\""
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.103.3",
@@ -17,6 +42,8 @@
   "devDependencies": {
     "@vitejs/plugin-react": "^6.0.1",
     "autoprefixer": "^10.5.0",
+    "electron": "^41.2.2",
+    "electron-builder": "^26.8.1",
     "postcss": "^8.5.10",
     "tailwindcss": "^3.4.19",
     "vite": "^8.0.8"

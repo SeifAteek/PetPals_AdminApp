@@ -10,7 +10,7 @@ export default defineConfig({
   plugins: [react()],
   resolve: {
     alias: {
-      '@petpals/theme': path.resolve(__dirname, '../shared-web-theme'),
+      '@petpals/theme': path.resolve(__dirname, './shared-web-theme'),
       react: path.resolve(__dirname, 'node_modules/react'),
       'react-dom': path.resolve(__dirname, 'node_modules/react-dom'),
     },

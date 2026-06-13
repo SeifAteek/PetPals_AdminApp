@@ -1,0 +1,49 @@
+WARNING : Internet is required — the apps connect to Supabase online.
+=============================================
+
+Each .exe file is a self-contained app. It includes Electron, React, and all
+packages. You do NOT need Node.js, npm, or any other software installed.
+
+Double-click the .exe in each folder to run that app:
+
+  Sign-in tips (all apps)
+-----------------------
+  Email:    SeifAteek@gmail.com
+  Password: seif1234
+
+App Places:
+
+  Admin app   -> PetPals_AdminApp-main\PetPals_AdminApp-main\PetPalsAdmin.exe
+  Clinic app  -> PetPalsClinic-main2\PetPalsClinic-main2\PetPalsClinic-main\ClinicApp.exe
+  Shelter app -> PetPalsShelter-main2\PetPalsShelter-main\ShelterApp.exe
+  Shop app    -> PetPals_ShopApp-main2\PetPals_ShopApp-main\PetPalsStore.exe
+
+tips:
+
+  1. Open any app by double-clicking its .exe file.
+  2. Wait for the login screen to load.
+  3. The email and password fields may already be filled in — if not, type them in.
+  4. Click Sign in (or the login button).
+  5. You need an internet connection for sign-in to work.
+
+  If login fails:
+  - Check your internet connection.
+  - Make sure the email is typed exactly: SeifAteek@gmail.com
+  - Make sure the password is typed exactly: seif1234
+  - Close the app completely and open it again.
+
+
+Flash drive tip
+---------------
+Copy the whole Petpals folder to your USB drive, or copy only the four .exe
+files listed above from each app folder.
+Each .exe is about 85-95 MB (normal for desktop apps with a built-in browser).
+
+Windows only — these are Windows portable executables (.exe).
+
+
+To rebuild the .exe files (developers only)
+-------------------------------------------
+  cd <app-folder>
+  npm install
+  npm run electron:build:win

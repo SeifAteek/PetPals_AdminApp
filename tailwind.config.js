@@ -1,7 +1,7 @@
 import { createRequire } from 'module'
 
 const require = createRequire(import.meta.url)
-const petpalsPreset = require('../shared-web-theme/tailwind.preset.cjs')
+const petpalsPreset = require('./shared-web-theme/tailwind.preset.cjs')
 
 /** @type {import('tailwindcss').Config} */
 export default {

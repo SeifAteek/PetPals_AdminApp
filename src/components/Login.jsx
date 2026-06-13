@@ -3,10 +3,11 @@ import { supabase } from '../supabaseClient'
 import PetPalsLogo from '@petpals/theme/PetPalsLogo.jsx'
 import ThemeToggle from '@petpals/theme/ThemeToggle.jsx'
 import { Mail, Lock, Shield, Users, BarChart3 } from 'lucide-react'
+import { DEFAULT_LOGIN_EMAIL, DEFAULT_LOGIN_PASSWORD } from '../config/defaultLogin.js'
 
 const Login = ({ onLoginSuccess }) => {
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
+  const [email, setEmail] = useState(DEFAULT_LOGIN_EMAIL)
+  const [password, setPassword] = useState(DEFAULT_LOGIN_PASSWORD)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(null)
 
